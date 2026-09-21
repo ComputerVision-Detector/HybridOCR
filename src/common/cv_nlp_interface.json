@@ -1,0 +1,104 @@
+{
+  "document_id": "doc_001",
+  "metadata": {
+    "image_width": 1920,
+    "image_height": 1080,
+    "processing_timestamp": "2026-09-22T01:54:49Z"
+  },
+  "elements": [
+    {
+      "element_id": "elem_001",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 120,
+        "y": 300,
+        "width": 450,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "하이브리드OCR",
+        "confidence_score": 0.92,
+        "additional_features": {} 
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null,
+        "additional_features": {}
+      }
+    },
+    {
+      "element_id": "elem_002",
+      "class_type": "Arrow",
+      "bounding_box": {
+        "x": 580,
+        "y": 310,
+        "width": 100,
+        "height": 20
+      },
+      "cv_result": {
+        "raw_text": null,
+        "confidence_score": 0.88,
+        "additional_features": {
+          "direction": "right"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null,
+        "additional_features": {}
+      }
+    },
+    {
+      "element_id": "elem_003",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 700,
+        "y": 300,
+        "width": 300,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "시각적구조",
+        "confidence_score": 0.85,
+        "additional_features": {}
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null,
+        "additional_features": {}
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_001",
+      "source_id": "elem_001",
+      "target_id": "elem_003",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": "elem_002",
+        "distance": 20.5,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "relation_type": "logical_flow",
+        "is_confirmed": null
+      }
+    },
+    {
+      "relation_id": "rel_002",
+      "source_id": "elem_004",
+      "target_id": "elem_005",
+      "cv_relation": {
+        "relation_type": "spatial_contains",
+        "via_id": null,
+        "overlap_ratio": 0.95,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "relation_type": "semantic_grouping",
+        "is_confirmed": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# File location: HybridOCR/requirements.txt
+
+# CV 파트 주요 의존성
+opencv-python>=4.8.0      # 이미지 읽기, 전처리, 바운딩 박스 크롭 및 변환
+numpy>=1.24.0             # 이미지 배열 처리 및 기하학적 연산
+ultralytics>=8.0.0        # YOLO 모델 기반 객체(Text, Arrow, Box) 탐지
+easyocr>=1.7.0            # 한글 및 영문 텍스트 인식 (OCR)
+
+# ML/DL 프레임워크 (easyocr 및 ultralytics의 코어 라이브러리)
+torch>=2.0.0              # PyTorch 딥러닝 엔진
+torchvision>=0.15.0       # PyTorch 비전 모듈
+
+# NLP 파트 주요 의존성 (추후 NLP 팀에서 필요한 패키지 추가)
+# transformers            # 허깅페이스 언어 모델 기반 오탈자 교정
+# konlpy                  # 한국어 형태소 분석
