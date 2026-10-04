@@ -1,0 +1,10 @@
+{
+  "document_id": "ordinary_note",
+  "element_ids": [
+    "note"
+  ],
+  "texts": {
+    "note": "메모"
+  },
+  "relations": []
+}

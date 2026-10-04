@@ -59,7 +59,7 @@ def relation_key(item: dict, relation_type) -> tuple:
             require_id(item.get("target_id"), "target_id"))
 
 
-def error_keys(document: dict) -> set:
+def error_keys(document: dict, confirmed_only: bool = False) -> set:
     result = set()
     for item in require_list(document, "errors"):
         if not isinstance(item, dict):
@@ -70,7 +70,11 @@ def error_keys(document: dict) -> set:
             raise ValueError("오류에는 관련 element_ids가 필요합니다.")
         if len(set(element_ids)) != len(element_ids):
             raise ValueError("오류의 element_ids는 중복될 수 없습니다.")
-        result.add((error_type, tuple(sorted(element_ids))))
+        confirmed = item.get("is_confirmed", True)
+        if confirmed is not None and type(confirmed) is not bool:
+            raise ValueError("오류 is_confirmed는 boolean 또는 null이어야 합니다.")
+        if not confirmed_only or confirmed is True:
+            result.add((error_type, tuple(sorted(element_ids))))
     return result
 
 
@@ -199,8 +203,15 @@ def evaluate_document(reference: dict, prediction: dict, ignore_whitespace: bool
             raise ValueError("정답 오류에 알 수 없는 요소 참조가 있습니다.")
         errors = {"status": "prediction_missing"}
         if "errors" in prediction:
-            actual_errors = error_keys(prediction)
+            candidates = error_keys(prediction)
+            actual_errors = error_keys(prediction, confirmed_only=True)
             errors = {"status": "evaluated", **compare_sets(expected_errors, actual_errors)}
+            errors["candidate_generation"] = compare_sets(expected_errors, candidates)
+            errors["unreviewed_candidates"] = sum(e.get("is_confirmed", True) is None for e in prediction["errors"])
+            errors["rejected_candidates"] = sum(e.get("is_confirmed", True) is False for e in prediction["errors"])
+            errors["normal_document"] = not expected_errors
+            errors["normal_document_false_alarm"] = bool(actual_errors) if not expected_errors else None
+            errors["normal_document_candidate_alarm"] = bool(candidates) if not expected_errors else None
             kinds = sorted({key[0] for key in expected_errors | actual_errors})
             errors["by_type"] = {kind: compare_sets({key for key in expected_errors if key[0] == kind},
                                                      {key for key in actual_errors if key[0] == kind}) for kind in kinds}
@@ -248,6 +259,13 @@ def aggregate(documents: list) -> dict:
     result["errors"]["status"] = "incomplete" if missing_error_predictions else "evaluated" if evaluated_errors else "reference_missing"
     if evaluated_errors and not missing_error_predictions:
         result["errors"].update(micro(evaluated_errors))
+        result["errors"]["candidate_generation"] = micro([e["candidate_generation"] for e in evaluated_errors])
+        result["errors"]["unreviewed_candidates"] = sum(e["unreviewed_candidates"] for e in evaluated_errors)
+        result["errors"]["rejected_candidates"] = sum(e["rejected_candidates"] for e in evaluated_errors)
+        normal = [e for e in evaluated_errors if e["normal_document"]]
+        result["errors"]["normal_documents"] = len(normal)
+        result["errors"]["normal_document_false_alarm_rate"] = ratio(sum(e["normal_document_false_alarm"] for e in normal), len(normal))
+        result["errors"]["normal_document_candidate_alarm_rate"] = ratio(sum(e["normal_document_candidate_alarm"] for e in normal), len(normal))
         kinds = sorted(set(chain.from_iterable(item["by_type"] for item in evaluated_errors)))
         result["errors"]["by_type"] = {kind: micro([
             item["by_type"].get(kind, scores(0, 0, 0)) for item in evaluated_errors]) for kind in kinds}

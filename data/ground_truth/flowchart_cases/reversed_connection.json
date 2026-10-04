@@ -1,0 +1,46 @@
+{
+  "document_id": "flow_reversed_connection",
+  "synthetic": true,
+  "element_ids": [
+    "s",
+    "p",
+    "e"
+  ],
+  "texts": {
+    "s": "Start",
+    "p": "Process",
+    "e": "End"
+  },
+  "relations": [
+    {
+      "source_id": "s",
+      "target_id": "p",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "e",
+      "target_id": "p",
+      "relation_type": "connects"
+    }
+  ],
+  "errors": [
+    {
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ]
+    },
+    {
+      "error_type": "end_has_outgoing",
+      "element_ids": [
+        "e"
+      ]
+    },
+    {
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "e"
+      ]
+    }
+  ]
+}

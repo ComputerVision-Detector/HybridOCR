@@ -1,0 +1,227 @@
+{
+  "document_id": "flow_reversed_connection",
+  "metadata": {
+    "document_type": "flowchart",
+    "synthetic": true,
+    "image_width": 800,
+    "image_height": 600,
+    "flowchart_rules": {
+      "require_terminal_nodes": true
+    }
+  },
+  "elements": [
+    {
+      "element_id": "s",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Start",
+        "additional_features": {
+          "flow_role": "start"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null
+      }
+    },
+    {
+      "element_id": "p",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Process",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null
+      }
+    },
+    {
+      "element_id": "e",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 200,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "End",
+        "additional_features": {
+          "flow_role": "end"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r1",
+      "source_id": "s",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": null
+      }
+    },
+    {
+      "relation_id": "r2",
+      "source_id": "e",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": null
+      }
+    }
+  ],
+  "flowchart": {
+    "nodes": [
+      {
+        "element_id": "s",
+        "text": "Start",
+        "text_element_ids": [
+          "s"
+        ],
+        "role": "start",
+        "role_source": "cv_hint",
+        "bounding_box": {
+          "x": 50,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "p",
+        "text": "Process",
+        "text_element_ids": [
+          "p"
+        ],
+        "role": "process",
+        "role_source": "cv_hint",
+        "bounding_box": {
+          "x": 400,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "e",
+        "text": "End",
+        "text_element_ids": [
+          "e"
+        ],
+        "role": "end",
+        "role_source": "cv_hint",
+        "bounding_box": {
+          "x": 50,
+          "y": 200,
+          "width": 200,
+          "height": 50
+        }
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "r1",
+        "source_id": "s",
+        "target_id": "p",
+        "via_id": null,
+        "status": "unreviewed",
+        "original_source_id": "s",
+        "original_target_id": "p"
+      },
+      {
+        "relation_id": "r2",
+        "source_id": "e",
+        "target_id": "p",
+        "via_id": null,
+        "status": "unreviewed",
+        "original_source_id": "e",
+        "original_target_id": "p"
+      }
+    ],
+    "contains": [],
+    "invalid_relations": [],
+    "unmapped_relation_ids": [],
+    "projection_basis": "non-rejected CV containment; unreviewed membership is provisional",
+    "rules": {
+      "require_terminal_nodes": true,
+      "decision_min_branches": 2,
+      "check_reachability": true
+    },
+    "rules_version": "1",
+    "status": "analyzed"
+  },
+  "errors": [
+    {
+      "error_id": "flow_error_001",
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ],
+      "reason": "종료가 아닌 노드의 다음 연결을 확인하지 못했습니다.",
+      "suggestion": "누락된 화살표 또는 연결 대상을 확인하세요.",
+      "is_confirmed": null,
+      "review_source": "rules"
+    },
+    {
+      "error_id": "flow_error_002",
+      "error_type": "end_has_outgoing",
+      "element_ids": [
+        "e"
+      ],
+      "reason": "종료 노드에서 나가는 연결이 있습니다.",
+      "suggestion": "종료 역할과 연결 방향을 확인하세요.",
+      "is_confirmed": null,
+      "review_source": "rules"
+    },
+    {
+      "error_id": "flow_error_003",
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "e"
+      ],
+      "reason": "시작 노드에서 도달하는 경로를 확인하지 못했습니다.",
+      "suggestion": "연결 누락·방향·시작 역할을 확인하세요.",
+      "is_confirmed": null,
+      "review_source": "rules"
+    }
+  ],
+  "proposed_relations": [],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "scaffold",
+    "stages": {
+      "text_correction": "not_implemented",
+      "semantic_analysis": "not_implemented",
+      "flowchart_analysis": "rules_only"
+    }
+  }
+}

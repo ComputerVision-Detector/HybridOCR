@@ -3,11 +3,13 @@
 import argparse
 from copy import deepcopy
 import json
+import math
 from pathlib import Path
 import time
 
 from nlp.correction.text_corrector import correct_text
 from nlp.relation.semantic_analyzer import analyze_relations
+from nlp.relation.flowchart import analyze_flowchart, flowchart_rules
 
 
 def validate_document(document: dict) -> None:
@@ -15,6 +17,14 @@ def validate_document(document: dict) -> None:
         raise ValueError("입력은 JSON 객체여야 합니다.")
     if not isinstance(document.get("document_id"), str) or not document["document_id"].strip():
         raise ValueError("document_id는 비어 있지 않은 문자열이어야 합니다.")
+    metadata = document.get("metadata", {})
+    if not isinstance(metadata, dict):
+        raise ValueError("metadata는 객체여야 합니다.")
+    if metadata.get("document_type") == "flowchart":
+        flowchart_rules(metadata)
+    if "image_width" in metadata or "image_height" in metadata:
+        if any(type(metadata.get(key)) is not int or metadata[key] <= 0 for key in ("image_width", "image_height")):
+            raise ValueError("이미지 가로·세로 크기는 함께 제공하는 양의 정수여야 합니다.")
     for field, result_field in (("elements", "nlp_result"), ("relations", "nlp_relation")):
         items = document.get(field)
         if not isinstance(items, list):
@@ -40,6 +50,17 @@ def validate_document(document: dict) -> None:
                 raw_text = item.get("cv_result", {}).get("raw_text")
                 if raw_text is not None and not isinstance(raw_text, str):
                     raise ValueError("raw_text는 문자열 또는 null이어야 합니다.")
+                features = item.get("cv_result", {}).get("additional_features", {})
+                if not isinstance(features, dict):
+                    raise ValueError("additional_features는 객체여야 합니다.")
+                if "bounding_box" in item:
+                    box = item["bounding_box"]
+                    if not isinstance(box, dict) or any(type(box.get(key)) not in (int, float) or not math.isfinite(box[key]) for key in ("x", "y", "width", "height")):
+                        raise ValueError("bounding_box에는 유한한 숫자 x/y/width/height가 필요합니다.")
+                    if box["x"] < 0 or box["y"] < 0 or box["width"] <= 0 or box["height"] <= 0:
+                        raise ValueError("좌표는 음수가 아니고 영역 크기는 양수여야 합니다.")
+                    if "image_width" in metadata and (box["x"] + box["width"] > metadata["image_width"] or box["y"] + box["height"] > metadata["image_height"]):
+                        raise ValueError("bounding_box가 이미지 범위를 벗어났습니다.")
             else:
                 for reference in (item.get("source_id"), item.get("target_id")):
                     if not isinstance(reference, str) or not reference.strip():
@@ -55,17 +76,20 @@ def run_pipeline(document: dict, model=None) -> dict:
     started = time.perf_counter()
     result = correct_text(result, model)
     result = analyze_relations(result, model)
+    flowchart_status = analyze_flowchart(result, model)
     stage_status = "completed" if model is not None else "not_implemented"
     result["nlp_pipeline"] = {
+        "output_schema_version": "1",
         "mode": "model" if model is not None else "scaffold",
         "stages": {
             "text_correction": stage_status,
             "semantic_analysis": stage_status,
+            "flowchart_analysis": flowchart_status or "skipped",
         },
     }
     if model is not None:
         from nlp.qwen import MODEL_ID
-        result["nlp_pipeline"].update({"model_id": MODEL_ID, "prompt_version": "1",
+        result["nlp_pipeline"].update({"model_id": MODEL_ID, "prompt_version": "3",
                                        "input_type": "image_and_json" if getattr(model, "image", None) is not None else "json",
                                        "inference_seconds": round(time.perf_counter() - started, 3)})
     return result

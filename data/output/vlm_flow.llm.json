@@ -41,7 +41,7 @@
         "additional_features": {}
       },
       "nlp_result": {
-        "corrected_text": "Start",
+        "corrected_text": "Strat",
         "sequence_order": 1
       }
     },
@@ -130,8 +130,8 @@
         "is_valid_geometry": true
       },
       "nlp_relation": {
-        "is_confirmed": true,
-        "relation_type": "semantic_grouping"
+        "is_confirmed": null,
+        "relation_type": null
       }
     },
     {
@@ -144,8 +144,8 @@
         "is_valid_geometry": true
       },
       "nlp_relation": {
-        "is_confirmed": true,
-        "relation_type": "semantic_grouping"
+        "is_confirmed": null,
+        "relation_type": null
       }
     }
   ],
@@ -153,11 +153,11 @@
     "nodes": [
       {
         "element_id": "box_1",
-        "text": "Start",
+        "text": "Strat",
         "text_element_ids": [
           "text_1"
         ],
-        "role": "start",
+        "role": "process",
         "role_source": "model",
         "bounding_box": {
           "x": 64,
@@ -199,14 +199,14 @@
         "source_id": "box_1",
         "target_id": "text_1",
         "via_id": null,
-        "status": "confirmed"
+        "status": "unreviewed"
       },
       {
         "relation_id": "rel_3",
         "source_id": "box_2",
         "target_id": "text_2",
         "via_id": null,
-        "status": "confirmed"
+        "status": "unreviewed"
       }
     ],
     "invalid_relations": [],
@@ -232,7 +232,7 @@
     },
     "model_id": "Qwen/Qwen3.5-4B",
     "prompt_version": "3",
-    "input_type": "image_and_json",
-    "inference_seconds": 18.807
+    "input_type": "json",
+    "inference_seconds": 17.86
   }
 }

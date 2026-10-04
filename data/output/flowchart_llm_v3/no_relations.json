@@ -1,0 +1,223 @@
+{
+  "document_id": "flow_no_relations",
+  "metadata": {
+    "document_type": "flowchart",
+    "synthetic": true,
+    "image_width": 800,
+    "image_height": 600,
+    "flowchart_rules": {
+      "require_terminal_nodes": true
+    }
+  },
+  "elements": [
+    {
+      "element_id": "s",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Start",
+        "additional_features": {
+          "flow_role": "start"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Start",
+        "sequence_order": 1
+      }
+    },
+    {
+      "element_id": "p",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Process",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Process",
+        "sequence_order": 2
+      }
+    },
+    {
+      "element_id": "e",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 200,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "End",
+        "additional_features": {
+          "flow_role": "end"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "End",
+        "sequence_order": 3
+      }
+    }
+  ],
+  "relations": [],
+  "flowchart": {
+    "nodes": [
+      {
+        "element_id": "s",
+        "text": "Start",
+        "text_element_ids": [
+          "s"
+        ],
+        "role": "start",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "p",
+        "text": "Process",
+        "text_element_ids": [
+          "p"
+        ],
+        "role": "process",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 400,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "e",
+        "text": "End",
+        "text_element_ids": [
+          "e"
+        ],
+        "role": "end",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 200,
+          "width": 200,
+          "height": 50
+        }
+      }
+    ],
+    "edges": [],
+    "contains": [],
+    "invalid_relations": [],
+    "unmapped_relation_ids": [],
+    "projection_basis": "non-rejected CV containment; unreviewed membership is provisional",
+    "rules": {
+      "require_terminal_nodes": true,
+      "decision_min_branches": 2,
+      "check_reachability": true
+    },
+    "rules_version": "1",
+    "status": "analyzed"
+  },
+  "errors": [
+    {
+      "error_id": "flow_error_001",
+      "error_type": "missing_connection",
+      "element_ids": [
+        "s"
+      ],
+      "reason": "Graph has no edges. Node 's' (Start) is a non-terminal node but has no outgoing connection, violating the requirement for terminal nodes or connections.",
+      "suggestion": "누락된 화살표 또는 연결 대상을 확인하세요.",
+      "is_confirmed": true,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_002",
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ],
+      "reason": "Graph has no edges. Node 'p' (Process) is a non-terminal node but has no outgoing connection, violating the requirement for terminal nodes or connections.",
+      "suggestion": "누락된 화살표 또는 연결 대상을 확인하세요.",
+      "is_confirmed": true,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_003",
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "e"
+      ],
+      "reason": "Graph has no edges. Node 'e' (End) is unreachable from the start node 's' because there are no paths connecting them.",
+      "suggestion": "연결 누락·방향·시작 역할을 확인하세요.",
+      "is_confirmed": true,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_004",
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "p"
+      ],
+      "reason": "Graph has no edges. Node 'p' (Process) is unreachable from the start node 's' because there are no paths connecting them.",
+      "suggestion": "연결 누락·방향·시작 역할을 확인하세요.",
+      "is_confirmed": true,
+      "review_source": "model"
+    }
+  ],
+  "proposed_relations": [
+    {
+      "proposal_id": "flow_proposal_001",
+      "source_id": "s",
+      "target_id": "p",
+      "relation_type": "logical_flow",
+      "reason": "Connects start node to process node to resolve flow_error_001 and flow_error_004.",
+      "related_error_ids": [
+        "flow_error_001",
+        "flow_error_004"
+      ],
+      "status": "needs_user_confirmation",
+      "purpose": "suggested_repair"
+    },
+    {
+      "proposal_id": "flow_proposal_002",
+      "source_id": "p",
+      "target_id": "e",
+      "relation_type": "logical_flow",
+      "reason": "Connects process node to end node to resolve flow_error_002 and flow_error_003.",
+      "related_error_ids": [
+        "flow_error_002",
+        "flow_error_003"
+      ],
+      "status": "needs_user_confirmation",
+      "purpose": "suggested_repair"
+    }
+  ],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "model",
+    "stages": {
+      "text_correction": "completed",
+      "semantic_analysis": "completed",
+      "flowchart_analysis": "model_reviewed"
+    },
+    "model_id": "Qwen/Qwen3.5-4B",
+    "prompt_version": "3",
+    "input_type": "json",
+    "inference_seconds": 41.803
+  }
+}

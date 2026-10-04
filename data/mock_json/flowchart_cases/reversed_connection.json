@@ -1,0 +1,84 @@
+{
+  "document_id": "flow_reversed_connection",
+  "metadata": {
+    "document_type": "flowchart",
+    "synthetic": true,
+    "image_width": 800,
+    "image_height": 600,
+    "flowchart_rules": {
+      "require_terminal_nodes": true
+    }
+  },
+  "elements": [
+    {
+      "element_id": "s",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Start",
+        "additional_features": {
+          "flow_role": "start"
+        }
+      }
+    },
+    {
+      "element_id": "p",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Process",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      }
+    },
+    {
+      "element_id": "e",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 200,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "End",
+        "additional_features": {
+          "flow_role": "end"
+        }
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r1",
+      "source_id": "s",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      }
+    },
+    {
+      "relation_id": "r2",
+      "source_id": "e",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      }
+    }
+  ]
+}

@@ -129,6 +129,23 @@ class EvaluationTest(unittest.TestCase):
             rejected = subprocess.run(command + [str(report)], capture_output=True)
             self.assertNotEqual(rejected.returncode, 0)
 
+    def test_error_review_states_and_normal_document_false_alarms(self):
+        prediction = deepcopy(self.prediction)
+        prediction["errors"] = [{"error_type": "missing_connection", "element_ids": ["a"], "is_confirmed": None}]
+        pending = evaluate_document(self.reference, prediction)
+        self.assertEqual(pending["errors"]["fp"], 0)
+        self.assertEqual(pending["errors"]["candidate_generation"]["fp"], 1)
+        self.assertEqual(pending["errors"]["unreviewed_candidates"], 1)
+        self.assertEqual(aggregate([pending])["errors"]["normal_document_false_alarm_rate"], 0)
+        self.assertEqual(aggregate([pending])["errors"]["normal_document_candidate_alarm_rate"], 1)
+        prediction["errors"][0]["is_confirmed"] = False
+        self.assertEqual(evaluate_document(self.reference, prediction)["errors"]["rejected_candidates"], 1)
+        prediction["errors"][0]["is_confirmed"] = True
+        self.assertEqual(aggregate([evaluate_document(self.reference, prediction)])["errors"]["normal_document_false_alarm_rate"], 1)
+        prediction["errors"][0]["is_confirmed"] = "true"
+        with self.assertRaises(ValueError):
+            evaluate_document(self.reference, prediction)
+
 
 if __name__ == "__main__":
     unittest.main()

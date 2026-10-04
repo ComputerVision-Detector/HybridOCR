@@ -1,0 +1,27 @@
+{
+  "document_id": "flow_empty_ocr",
+  "synthetic": true,
+  "element_ids": [
+    "s",
+    "p",
+    "e"
+  ],
+  "texts": {
+    "s": "Start",
+    "p": "",
+    "e": "End"
+  },
+  "relations": [
+    {
+      "source_id": "s",
+      "target_id": "p",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "p",
+      "target_id": "e",
+      "relation_type": "connects"
+    }
+  ],
+  "errors": []
+}

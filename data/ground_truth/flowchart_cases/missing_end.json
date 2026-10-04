@@ -1,0 +1,34 @@
+{
+  "document_id": "flow_missing_end",
+  "synthetic": true,
+  "element_ids": [
+    "s",
+    "p"
+  ],
+  "texts": {
+    "s": "Start",
+    "p": "Process"
+  },
+  "relations": [
+    {
+      "source_id": "s",
+      "target_id": "p",
+      "relation_type": "connects"
+    }
+  ],
+  "errors": [
+    {
+      "error_type": "missing_end",
+      "element_ids": [
+        "s",
+        "p"
+      ]
+    },
+    {
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ]
+    }
+  ]
+}

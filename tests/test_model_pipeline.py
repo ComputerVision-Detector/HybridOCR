@@ -92,6 +92,42 @@ class ModelPipelineTest(unittest.TestCase):
         self.assertTrue(all("attached document image" in instruction for instruction in model.instructions))
         self.assertTrue(all("There is no image" not in instruction for instruction in model.instructions))
 
+    def test_multiple_relations_preserve_ids_and_reject_incomplete_response(self):
+        document = deepcopy(self.document)
+        document["elements"].append({"element_id": "box_1", "class_type": "Box", "cv_result": {"raw_text": None}})
+        document["relations"].extend([
+            {"relation_id": "rel_2", "source_id": "box_1", "target_id": "text_1",
+             "cv_relation": {"relation_type": "spatial_contains"}},
+            {"relation_id": "rel_3", "source_id": "box_1", "target_id": "text_2",
+             "cv_relation": {"relation_type": "spatial_contains"}},
+        ])
+        original = deepcopy(document)
+        analysis = deepcopy(self.analysis)
+        analysis["relations"] = [
+            {"relation_id": "rel_3", "relation_type": "semantic_grouping", "is_confirmed": True},
+            {"relation_id": "rel_2", "relation_type": "semantic_grouping", "is_confirmed": True},
+            {"relation_id": "rel_1", "relation_type": "logical_flow", "is_confirmed": None},
+        ]
+        model = FakeModel([self.correction, analysis])
+        result = run_pipeline(document, model)
+        self.assertEqual(document, original)
+        confirmed = {r["relation_id"]: r["nlp_relation"]["is_confirmed"] for r in result["relations"]}
+        self.assertEqual(confirmed, {"rel_1": None, "rel_bad": None, "rel_2": True, "rel_3": True})
+        template = model.payloads[1]["output_template"]
+        self.assertEqual([r["relation_id"] for r in template["relations"]], ["rel_1", "rel_2", "rel_3"])
+        self.assertEqual([e["element_id"] for e in template["elements"]], ["text_1", "text_2"])
+        self.assertEqual(model.payloads[1]["elements"][1]["nlp_result"]["corrected_text"], "끝")
+        self.assertEqual(result["nlp_pipeline"]["prompt_version"], "3")
+        invalid_responses = [deepcopy(analysis) for _ in range(4)]
+        invalid_responses[0]["relations"].pop()
+        invalid_responses[1]["relations"][1] = invalid_responses[1]["relations"][0]
+        invalid_responses[2]["relations"][0]["relation_type"] = None
+        invalid_responses[3]["elements"][0]["sequence_order"] = 1
+        for invalid in invalid_responses:
+            with self.subTest(response=invalid), self.assertRaises(ValueError):
+                run_pipeline(document, FakeModel([self.correction, invalid]))
+            self.assertEqual(document, original)
+
     def test_parse_json_and_validate_input(self):
         self.assertEqual(parse_model_json('```json\n{"elements": []}\n```'), {"elements": []})
         for invalid in ('{"elements":', '[]', 'explanation {"elements": []}'):

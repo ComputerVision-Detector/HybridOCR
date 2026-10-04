@@ -1,0 +1,34 @@
+{
+  "document_id": "ordinary_note",
+  "metadata": {
+    "document_type": "note",
+    "synthetic": true
+  },
+  "elements": [
+    {
+      "element_id": "note",
+      "class_type": "Text",
+      "cv_result": {
+        "raw_text": "메모"
+      },
+      "nlp_result": {
+        "corrected_text": "메모",
+        "sequence_order": null
+      }
+    }
+  ],
+  "relations": [],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "model",
+    "stages": {
+      "text_correction": "completed",
+      "semantic_analysis": "completed",
+      "flowchart_analysis": "skipped"
+    },
+    "model_id": "Qwen/Qwen3.5-4B",
+    "prompt_version": "3",
+    "input_type": "json",
+    "inference_seconds": 3.975
+  }
+}

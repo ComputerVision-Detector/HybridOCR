@@ -47,7 +47,7 @@ def create_mock(root: Path = ROOT) -> tuple[Path, Path, Path]:
         relations.append({"relation_id": f"rel_{index}", "source_id": source, "target_id": target,
                           "cv_relation": {"relation_type": kind, "via_id": via, "is_valid_geometry": True}})
     document = {"document_id": "mock_vlm_flow", "metadata": {
-        "image_width": 768, "image_height": 384, "synthetic": True,
+        "image_width": 768, "image_height": 384, "synthetic": True, "document_type": "flowchart",
     }, "elements": elements, "relations": relations}
     image_path = root / "data/mock_images/vlm_flow.png"
     json_path = root / "data/mock_json/vlm_flow.json"

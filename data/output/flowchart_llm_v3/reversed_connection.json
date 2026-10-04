@@ -1,0 +1,246 @@
+{
+  "document_id": "flow_reversed_connection",
+  "metadata": {
+    "document_type": "flowchart",
+    "synthetic": true,
+    "image_width": 800,
+    "image_height": 600,
+    "flowchart_rules": {
+      "require_terminal_nodes": true
+    }
+  },
+  "elements": [
+    {
+      "element_id": "s",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Start",
+        "additional_features": {
+          "flow_role": "start"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Start",
+        "sequence_order": 1
+      }
+    },
+    {
+      "element_id": "p",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Process",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Process",
+        "sequence_order": 2
+      }
+    },
+    {
+      "element_id": "e",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 200,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "End",
+        "additional_features": {
+          "flow_role": "end"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "End",
+        "sequence_order": 3
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r1",
+      "source_id": "s",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": true,
+        "relation_type": "logical_flow"
+      }
+    },
+    {
+      "relation_id": "r2",
+      "source_id": "e",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": true,
+        "relation_type": "logical_flow"
+      }
+    }
+  ],
+  "flowchart": {
+    "nodes": [
+      {
+        "element_id": "s",
+        "text": "Start",
+        "text_element_ids": [
+          "s"
+        ],
+        "role": "start",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "p",
+        "text": "Process",
+        "text_element_ids": [
+          "p"
+        ],
+        "role": "process",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 400,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "e",
+        "text": "End",
+        "text_element_ids": [
+          "e"
+        ],
+        "role": "end",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 200,
+          "width": 200,
+          "height": 50
+        }
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "r1",
+        "source_id": "s",
+        "target_id": "p",
+        "via_id": null,
+        "status": "confirmed",
+        "original_source_id": "s",
+        "original_target_id": "p"
+      },
+      {
+        "relation_id": "r2",
+        "source_id": "e",
+        "target_id": "p",
+        "via_id": null,
+        "status": "confirmed",
+        "original_source_id": "e",
+        "original_target_id": "p"
+      }
+    ],
+    "contains": [],
+    "invalid_relations": [],
+    "unmapped_relation_ids": [],
+    "projection_basis": "non-rejected CV containment; unreviewed membership is provisional",
+    "rules": {
+      "require_terminal_nodes": true,
+      "decision_min_branches": 2,
+      "check_reachability": true
+    },
+    "rules_version": "1",
+    "status": "analyzed"
+  },
+  "errors": [
+    {
+      "error_id": "flow_error_001",
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ],
+      "reason": "The graph contains a confirmed edge (r2) from 'e' (End) to 'p' (Process). While 'p' lacks an outgoing edge to 'e', the error description 'missing connection for a non-terminal node' is ambiguous without knowing the intended flow direction. However, given the explicit rule 'require_terminal_nodes' and the presence of an edge pointing TO 'p' from 'e', the primary structural issue is likely the directionality or the unreachable 'e'. The candidate suggests a missing connection, but the data shows a connection exists (albeit in reverse). Without a clear intended path from 's' to 'p' to 'e' defined in the edges, confirming a missing connection is speculative.",
+      "suggestion": "Review the intended flow direction. If the flow is Start -> Process -> End, the edge from 'e' to 'p' is incorrect.",
+      "is_confirmed": false,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_002",
+      "error_type": "end_has_outgoing",
+      "element_ids": [
+        "e"
+      ],
+      "reason": "The graph data explicitly contains an edge (r2) with source_id 'e' and target_id 'p'. The node 'e' has the role 'end'. The rules include 'require_terminal_nodes', which implies end nodes should not have outgoing edges. The presence of the edge from 'e' to 'p' violates this rule.",
+      "suggestion": "Remove the outgoing edge from the 'End' node or change the role of the target node.",
+      "is_confirmed": true,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_003",
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "e"
+      ],
+      "reason": "The rules include 'check_reachability'. The only outgoing edge from the start node 's' is to 'p' (r1). There is no path from 's' to 'e'. The node 'e' is unreachable from the start node, violating the reachability check.",
+      "suggestion": "Add a connection from 'p' to 'e' to complete the flow.",
+      "is_confirmed": true,
+      "review_source": "model"
+    }
+  ],
+  "proposed_relations": [
+    {
+      "proposal_id": "flow_proposal_001",
+      "source_id": "p",
+      "target_id": "e",
+      "relation_type": "logical_flow",
+      "reason": "This repair addresses flow_error_003 (unreachable_node) by providing a path from Start to End. It also resolves the structural issue where 'p' has no outgoing connection to the terminal node.",
+      "related_error_ids": [
+        "flow_error_003"
+      ],
+      "status": "needs_user_confirmation",
+      "purpose": "suggested_repair"
+    }
+  ],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "model",
+    "stages": {
+      "text_correction": "completed",
+      "semantic_analysis": "completed",
+      "flowchart_analysis": "model_reviewed"
+    },
+    "model_id": "Qwen/Qwen3.5-4B",
+    "prompt_version": "3",
+    "input_type": "json",
+    "inference_seconds": 51.904
+  }
+}

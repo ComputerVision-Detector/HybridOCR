@@ -1,0 +1,165 @@
+{
+  "document_id": "flow_missing_end",
+  "metadata": {
+    "document_type": "flowchart",
+    "synthetic": true,
+    "image_width": 800,
+    "image_height": 600,
+    "flowchart_rules": {
+      "require_terminal_nodes": true
+    }
+  },
+  "elements": [
+    {
+      "element_id": "s",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Start",
+        "additional_features": {
+          "flow_role": "start"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Start",
+        "sequence_order": 1
+      }
+    },
+    {
+      "element_id": "p",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Process",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Process",
+        "sequence_order": 2
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r1",
+      "source_id": "s",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": true,
+        "relation_type": "logical_flow"
+      }
+    }
+  ],
+  "flowchart": {
+    "nodes": [
+      {
+        "element_id": "s",
+        "text": "Start",
+        "text_element_ids": [
+          "s"
+        ],
+        "role": "start",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "p",
+        "text": "Process",
+        "text_element_ids": [
+          "p"
+        ],
+        "role": "process",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 400,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "r1",
+        "source_id": "s",
+        "target_id": "p",
+        "via_id": null,
+        "status": "confirmed",
+        "original_source_id": "s",
+        "original_target_id": "p"
+      }
+    ],
+    "contains": [],
+    "invalid_relations": [],
+    "unmapped_relation_ids": [],
+    "projection_basis": "non-rejected CV containment; unreviewed membership is provisional",
+    "rules": {
+      "require_terminal_nodes": true,
+      "decision_min_branches": 2,
+      "check_reachability": true
+    },
+    "rules_version": "1",
+    "status": "analyzed"
+  },
+  "errors": [
+    {
+      "error_id": "flow_error_001",
+      "error_type": "missing_end",
+      "element_ids": [
+        "p",
+        "s"
+      ],
+      "reason": "The graph contains a 'Start' node (s) and a 'Process' node (p) with a confirmed edge between them. The rule 'require_terminal_nodes' is active, but the graph does not explicitly contain a node with the 'end' role. However, the error candidate suggests a missing end node. Since the graph structure is minimal and the 'Process' node is the only other element, confirming a missing end node would require adding a new node not present in the allowed repairs or graph data. Without a defined 'End' node in the graph or allowed repairs, this error cannot be confirmed as a structural violation of the provided data.",
+      "suggestion": "종료 노드 또는 문서 규칙을 확인하세요.",
+      "is_confirmed": false,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_002",
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ],
+      "reason": "The graph contains a 'Process' node (p) which is not a terminal node (no 'end' role). The rule 'require_terminal_nodes' is active, and the graph has no edges leading to a terminal node. The edge 'r1' connects 's' to 'p', but 'p' has no outgoing edges to a terminal node. This constitutes a missing connection from the process node to a valid end point.",
+      "suggestion": "누락된 화살표 또는 연결 대상을 확인하세요.",
+      "is_confirmed": true,
+      "review_source": "model"
+    }
+  ],
+  "proposed_relations": [],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "model",
+    "stages": {
+      "text_correction": "completed",
+      "semantic_analysis": "completed",
+      "flowchart_analysis": "model_reviewed"
+    },
+    "model_id": "Qwen/Qwen3.5-4B",
+    "prompt_version": "3",
+    "input_type": "json",
+    "inference_seconds": 33.115
+  }
+}

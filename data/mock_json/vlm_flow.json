@@ -3,7 +3,8 @@
   "metadata": {
     "image_width": 768,
     "image_height": 384,
-    "synthetic": true
+    "synthetic": true,
+    "document_type": "flowchart"
   },
   "elements": [
     {
