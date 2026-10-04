@@ -1,2 +1,10 @@
 # 수기 사진 폴더 
 data/raw_images/custom_notes_temp/
+
+# Python 실행 캐시
+__pycache__/
+*.py[cod]
+
+# 로컬 모델 실행 환경 및 다운로드 캐시
+.venv/
+.cache/

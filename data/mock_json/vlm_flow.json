@@ -1,0 +1,119 @@
+{
+  "document_id": "mock_vlm_flow",
+  "metadata": {
+    "image_width": 768,
+    "image_height": 384,
+    "synthetic": true
+  },
+  "elements": [
+    {
+      "element_id": "box_1",
+      "class_type": "Box",
+      "bounding_box": {
+        "x": 64,
+        "y": 128,
+        "width": 224,
+        "height": 128
+      },
+      "cv_result": {
+        "raw_text": null,
+        "confidence_score": 0.99,
+        "additional_features": {}
+      }
+    },
+    {
+      "element_id": "text_1",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 137,
+        "y": 179,
+        "width": 77,
+        "height": 27
+      },
+      "cv_result": {
+        "raw_text": "Strat",
+        "confidence_score": 0.99,
+        "additional_features": {}
+      }
+    },
+    {
+      "element_id": "box_2",
+      "class_type": "Box",
+      "bounding_box": {
+        "x": 480,
+        "y": 128,
+        "width": 224,
+        "height": 128
+      },
+      "cv_result": {
+        "raw_text": null,
+        "confidence_score": 0.99,
+        "additional_features": {}
+      }
+    },
+    {
+      "element_id": "text_2",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 559,
+        "y": 178,
+        "width": 66,
+        "height": 28
+      },
+      "cv_result": {
+        "raw_text": "End",
+        "confidence_score": 0.99,
+        "additional_features": {}
+      }
+    },
+    {
+      "element_id": "arrow_1",
+      "class_type": "Arrow",
+      "bounding_box": {
+        "x": 288,
+        "y": 178,
+        "width": 192,
+        "height": 28
+      },
+      "cv_result": {
+        "raw_text": null,
+        "confidence_score": 0.99,
+        "additional_features": {
+          "direction": "right"
+        }
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_1",
+      "source_id": "box_1",
+      "target_id": "box_2",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": "arrow_1",
+        "is_valid_geometry": true
+      }
+    },
+    {
+      "relation_id": "rel_2",
+      "source_id": "box_1",
+      "target_id": "text_1",
+      "cv_relation": {
+        "relation_type": "spatial_contains",
+        "via_id": null,
+        "is_valid_geometry": true
+      }
+    },
+    {
+      "relation_id": "rel_3",
+      "source_id": "box_2",
+      "target_id": "text_2",
+      "cv_relation": {
+        "relation_type": "spatial_contains",
+        "via_id": null,
+        "is_valid_geometry": true
+      }
+    }
+  ]
+}

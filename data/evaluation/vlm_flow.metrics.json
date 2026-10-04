@@ -1,0 +1,354 @@
+{
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "collapse",
+    "case_and_punctuation": "preserve"
+  },
+  "matching": "document_id and stable element_id; no detection IoU matching",
+  "runs": {
+    "ocr": {
+      "summary": {
+        "documents": 1,
+        "cer": {
+          "reference_characters": 8,
+          "raw_edit_distance": 2,
+          "corrected_edit_distance": 2,
+          "raw_cer": 0.25,
+          "corrected_cer": 0.25,
+          "relative_reduction": 0.0,
+          "improved_elements": 0,
+          "worsened_elements": 0
+        },
+        "relations": {
+          "cv": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "by_type": {
+              "connects": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "contains": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "nlp_confirmed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "by_type": {
+              "connects": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "contains": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 2,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          }
+        },
+        "reading_order": {
+          "evaluated_documents": 1,
+          "reference_pairs": 1,
+          "correct_pairs": 0,
+          "resolved_pairs": 0,
+          "pair_accuracy": 0.0,
+          "coverage": 0.0
+        },
+        "errors": {
+          "evaluated_documents": 0,
+          "missing_prediction_documents": 1,
+          "status": "incomplete"
+        },
+        "timing": {
+          "measured_documents": 0,
+          "mean_inference_seconds": null
+        }
+      },
+      "documents": [
+        {
+          "document_id": "mock_vlm_flow",
+          "cer": {
+            "reference_characters": 8,
+            "raw_edit_distance": 2,
+            "corrected_edit_distance": 2,
+            "raw_cer": 0.25,
+            "corrected_cer": 0.25,
+            "relative_reduction": 0.0,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 3,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 1,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 2,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                }
+              }
+            },
+            "unconfirmed_candidates": 3
+          },
+          "reading_order": {
+            "status": "evaluated",
+            "reference_pairs": 1,
+            "correct_pairs": 0,
+            "resolved_pairs": 0,
+            "pair_accuracy": 0.0,
+            "coverage": 0.0,
+            "accuracy_on_resolved": null
+          },
+          "errors": {
+            "status": "prediction_missing"
+          },
+          "inference_seconds": null
+        }
+      ]
+    },
+    "vlm": {
+      "summary": {
+        "documents": 1,
+        "cer": {
+          "reference_characters": 8,
+          "raw_edit_distance": 2,
+          "corrected_edit_distance": 0,
+          "raw_cer": 0.25,
+          "corrected_cer": 0.0,
+          "relative_reduction": 1.0,
+          "improved_elements": 1,
+          "worsened_elements": 0
+        },
+        "relations": {
+          "cv": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "by_type": {
+              "connects": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "contains": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "nlp_confirmed": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "by_type": {
+              "connects": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "contains": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          }
+        },
+        "reading_order": {
+          "evaluated_documents": 1,
+          "reference_pairs": 1,
+          "correct_pairs": 1,
+          "resolved_pairs": 1,
+          "pair_accuracy": 1.0,
+          "coverage": 1.0
+        },
+        "errors": {
+          "evaluated_documents": 0,
+          "missing_prediction_documents": 1,
+          "status": "incomplete"
+        },
+        "timing": {
+          "measured_documents": 1,
+          "mean_inference_seconds": 15.89
+        }
+      },
+      "documents": [
+        {
+          "document_id": "mock_vlm_flow",
+          "cer": {
+            "reference_characters": 8,
+            "raw_edit_distance": 2,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.25,
+            "corrected_cer": 0.0,
+            "relative_reduction": 1.0,
+            "improved_elements": 1,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "evaluated",
+            "reference_pairs": 1,
+            "correct_pairs": 1,
+            "resolved_pairs": 1,
+            "pair_accuracy": 1.0,
+            "coverage": 1.0,
+            "accuracy_on_resolved": 1.0
+          },
+          "errors": {
+            "status": "prediction_missing"
+          },
+          "inference_seconds": 15.89
+        }
+      ]
+    }
+  }
+}
