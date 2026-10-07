@@ -1,0 +1,39 @@
+{
+  "document_id": "flow_normal_branch",
+  "synthetic": true,
+  "element_ids": [
+    "s",
+    "d",
+    "p",
+    "e"
+  ],
+  "texts": {
+    "s": "Start",
+    "d": "Check",
+    "p": "Process",
+    "e": "End"
+  },
+  "relations": [
+    {
+      "source_id": "s",
+      "target_id": "d",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "d",
+      "target_id": "p",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "d",
+      "target_id": "e",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "p",
+      "target_id": "e",
+      "relation_type": "connects"
+    }
+  ],
+  "errors": []
+}

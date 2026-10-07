@@ -1,0 +1,2628 @@
+{
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "collapse",
+    "case_and_punctuation": "preserve"
+  },
+  "matching": "document_id and stable element_id; no detection IoU matching",
+  "runs": {
+    "rules": {
+      "summary": {
+        "documents": 11,
+        "cer": {
+          "reference_characters": 157,
+          "raw_edit_distance": 0,
+          "corrected_edit_distance": 0,
+          "raw_cer": 0.0,
+          "corrected_cer": 0.0,
+          "relative_reduction": null,
+          "improved_elements": 0,
+          "worsened_elements": 0
+        },
+        "relations": {
+          "cv": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "by_type": {
+              "connects": {
+                "tp": 20,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "contains": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "f1": null
+              }
+            }
+          },
+          "nlp_confirmed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 20,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "by_type": {
+              "connects": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 20,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "contains": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "f1": null
+              }
+            }
+          }
+        },
+        "reading_order": {
+          "evaluated_documents": 0,
+          "reference_pairs": 0,
+          "correct_pairs": 0,
+          "resolved_pairs": 0,
+          "pair_accuracy": null,
+          "coverage": null
+        },
+        "errors": {
+          "evaluated_documents": 10,
+          "missing_prediction_documents": 0,
+          "status": "evaluated",
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "candidate_generation": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "unreviewed_candidates": 14,
+          "rejected_candidates": 0,
+          "normal_documents": 4,
+          "normal_document_false_alarm_rate": 0.0,
+          "normal_document_candidate_alarm_rate": 0.0,
+          "by_type": {
+            "decision_branch_missing": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "end_has_outgoing": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "missing_connection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 6,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "missing_end": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "unreachable_node": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 5,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          }
+        },
+        "timing": {
+          "measured_documents": 0,
+          "mean_inference_seconds": null
+        }
+      },
+      "documents": [
+        {
+          "document_id": "flow_branch_missing",
+          "cer": {
+            "reference_characters": 20,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 3,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 3,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 3,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 3
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "candidate_generation": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 1,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "decision_branch_missing": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_empty_ocr",
+          "cer": {
+            "reference_characters": 8,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 2,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 2
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_isolated_node",
+          "cer": {
+            "reference_characters": 20,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 2,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 2
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "candidate_generation": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 2,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "unreachable_node": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_missing_connection",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 1,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 1
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "candidate_generation": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 2,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "unreachable_node": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_missing_end",
+          "cer": {
+            "reference_characters": 12,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 1,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 1
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "candidate_generation": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 2,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "missing_end": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_no_relations",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "candidate_generation": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 4,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 2,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "unreachable_node": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 2,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_normal",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 2,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 2
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_normal_branch",
+          "cer": {
+            "reference_characters": 20,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 4,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 4,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 4
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_normal_loop",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 3,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 3,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 3,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 3
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "flow_reversed_connection",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 2,
+                  "precision": null,
+                  "recall": 0.0,
+                  "f1": 0.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 2
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "candidate_generation": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 3,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "end_has_outgoing": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "unreachable_node": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": null
+        },
+        {
+          "document_id": "ordinary_note",
+          "cer": {
+            "reference_characters": 2,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 0.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "reference_missing"
+          },
+          "inference_seconds": null
+        }
+      ]
+    },
+    "llm": {
+      "summary": {
+        "documents": 11,
+        "cer": {
+          "reference_characters": 157,
+          "raw_edit_distance": 0,
+          "corrected_edit_distance": 0,
+          "raw_cer": 0.0,
+          "corrected_cer": 0.0,
+          "relative_reduction": null,
+          "improved_elements": 0,
+          "worsened_elements": 0
+        },
+        "relations": {
+          "cv": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "by_type": {
+              "connects": {
+                "tp": 20,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "contains": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "f1": null
+              }
+            }
+          },
+          "nlp_confirmed": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "by_type": {
+              "connects": {
+                "tp": 20,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "contains": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "f1": null
+              }
+            }
+          }
+        },
+        "reading_order": {
+          "evaluated_documents": 0,
+          "reference_pairs": 0,
+          "correct_pairs": 0,
+          "resolved_pairs": 0,
+          "pair_accuracy": null,
+          "coverage": null
+        },
+        "errors": {
+          "evaluated_documents": 10,
+          "missing_prediction_documents": 0,
+          "status": "evaluated",
+          "tp": 11,
+          "fp": 0,
+          "fn": 3,
+          "precision": 1.0,
+          "recall": 0.7857142857142857,
+          "f1": 0.88,
+          "candidate_generation": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "unreviewed_candidates": 0,
+          "rejected_candidates": 3,
+          "normal_documents": 4,
+          "normal_document_false_alarm_rate": 0.0,
+          "normal_document_candidate_alarm_rate": 0.0,
+          "by_type": {
+            "decision_branch_missing": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "end_has_outgoing": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "missing_connection": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 2,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "f1": 0.8
+            },
+            "missing_end": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "unreachable_node": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "timing": {
+          "measured_documents": 11,
+          "mean_inference_seconds": 30.357090909090914
+        }
+      },
+      "documents": [
+        {
+          "document_id": "flow_branch_missing",
+          "cer": {
+            "reference_characters": 20,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 3,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 3,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "candidate_generation": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "decision_branch_missing": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "inference_seconds": 35.937
+        },
+        {
+          "document_id": "flow_empty_ocr",
+          "cer": {
+            "reference_characters": 8,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": 18.073
+        },
+        {
+          "document_id": "flow_isolated_node",
+          "cer": {
+            "reference_characters": 20,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "candidate_generation": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "unreachable_node": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "inference_seconds": 46.181
+        },
+        {
+          "document_id": "flow_missing_connection",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "candidate_generation": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 1,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "unreachable_node": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "inference_seconds": 40.556
+        },
+        {
+          "document_id": "flow_missing_end",
+          "cer": {
+            "reference_characters": 12,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 1,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "candidate_generation": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 1,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "missing_end": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            }
+          },
+          "inference_seconds": 33.115
+        },
+        {
+          "document_id": "flow_no_relations",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 4,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "candidate_generation": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "missing_connection": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "unreachable_node": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "inference_seconds": 41.803
+        },
+        {
+          "document_id": "flow_normal",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": 17.67
+        },
+        {
+          "document_id": "flow_normal_branch",
+          "cer": {
+            "reference_characters": 20,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 4,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 4,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": 25.073
+        },
+        {
+          "document_id": "flow_normal_loop",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 3,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 3,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "candidate_generation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 0,
+            "normal_document": true,
+            "normal_document_false_alarm": false,
+            "normal_document_candidate_alarm": false,
+            "by_type": {}
+          },
+          "inference_seconds": 19.641
+        },
+        {
+          "document_id": "flow_reversed_connection",
+          "cer": {
+            "reference_characters": 15,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "by_type": {
+                "connects": {
+                  "tp": 2,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": 1.0,
+                  "recall": 1.0,
+                  "f1": 1.0
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "evaluated",
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "f1": 0.8,
+            "candidate_generation": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unreviewed_candidates": 0,
+            "rejected_candidates": 1,
+            "normal_document": false,
+            "normal_document_false_alarm": null,
+            "normal_document_candidate_alarm": null,
+            "by_type": {
+              "end_has_outgoing": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "missing_connection": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "unreachable_node": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            }
+          },
+          "inference_seconds": 51.904
+        },
+        {
+          "document_id": "ordinary_note",
+          "cer": {
+            "reference_characters": 2,
+            "raw_edit_distance": 0,
+            "corrected_edit_distance": 0,
+            "raw_cer": 0.0,
+            "corrected_cer": 0.0,
+            "relative_reduction": null,
+            "improved_elements": 0,
+            "worsened_elements": 0,
+            "corrected_text_coverage": 1.0,
+            "missing_text_elements": [],
+            "extra_text_elements": []
+          },
+          "relations": {
+            "cv": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "nlp_confirmed": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "by_type": {
+                "connects": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                },
+                "contains": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 0,
+                  "precision": null,
+                  "recall": null,
+                  "f1": null
+                }
+              }
+            },
+            "unconfirmed_candidates": 0
+          },
+          "reading_order": {
+            "status": "reference_missing"
+          },
+          "errors": {
+            "status": "reference_missing"
+          },
+          "inference_seconds": 3.975
+        }
+      ]
+    }
+  }
+}

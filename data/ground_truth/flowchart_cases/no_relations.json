@@ -1,0 +1,41 @@
+{
+  "document_id": "flow_no_relations",
+  "synthetic": true,
+  "element_ids": [
+    "s",
+    "p",
+    "e"
+  ],
+  "texts": {
+    "s": "Start",
+    "p": "Process",
+    "e": "End"
+  },
+  "relations": [],
+  "errors": [
+    {
+      "error_type": "missing_connection",
+      "element_ids": [
+        "s"
+      ]
+    },
+    {
+      "error_type": "missing_connection",
+      "element_ids": [
+        "p"
+      ]
+    },
+    {
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "p"
+      ]
+    },
+    {
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "e"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,13 @@
-# 수기 사진 폴더 안에 사진들 제외 hugging face에 올렸어도 바로바로 테스트할 때 필요한 이미지들 임시로 넣어둠
-data/raw_images/custom_notes_temp/*.jpg
-data/raw_images/custom_notes_temp/*.JPG
+# 수기 사진 폴더 
+data/raw_images/custom_notes_temp/
+
+# Python 실행 캐시
+__pycache__/
+*.py[cod]
+
+# 로컬 모델 실행 환경 및 다운로드 캐시
+.venv/
+.cache/
 
 data/raw_images/custom_notes_temp/.CV/
 .CV/

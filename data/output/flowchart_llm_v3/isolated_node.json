@@ -1,0 +1,282 @@
+{
+  "document_id": "flow_isolated_node",
+  "metadata": {
+    "document_type": "flowchart",
+    "synthetic": true,
+    "image_width": 800,
+    "image_height": 600,
+    "flowchart_rules": {
+      "require_terminal_nodes": true
+    }
+  },
+  "elements": [
+    {
+      "element_id": "s",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Start",
+        "additional_features": {
+          "flow_role": "start"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Start",
+        "sequence_order": 1
+      }
+    },
+    {
+      "element_id": "p",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 50,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Process",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Process",
+        "sequence_order": 2
+      }
+    },
+    {
+      "element_id": "e",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 50,
+        "y": 200,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "End",
+        "additional_features": {
+          "flow_role": "end"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "End",
+        "sequence_order": 3
+      }
+    },
+    {
+      "element_id": "u",
+      "class_type": "Text",
+      "bounding_box": {
+        "x": 400,
+        "y": 200,
+        "width": 200,
+        "height": 50
+      },
+      "cv_result": {
+        "raw_text": "Other",
+        "additional_features": {
+          "flow_role": "process"
+        }
+      },
+      "nlp_result": {
+        "corrected_text": "Other",
+        "sequence_order": null
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r1",
+      "source_id": "s",
+      "target_id": "p",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": true,
+        "relation_type": "logical_flow"
+      }
+    },
+    {
+      "relation_id": "r2",
+      "source_id": "p",
+      "target_id": "e",
+      "cv_relation": {
+        "relation_type": "spatial_connects",
+        "via_id": null,
+        "is_valid_geometry": true
+      },
+      "nlp_relation": {
+        "is_confirmed": true,
+        "relation_type": "logical_flow"
+      }
+    }
+  ],
+  "flowchart": {
+    "nodes": [
+      {
+        "element_id": "s",
+        "text": "Start",
+        "text_element_ids": [
+          "s"
+        ],
+        "role": "start",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "p",
+        "text": "Process",
+        "text_element_ids": [
+          "p"
+        ],
+        "role": "process",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 400,
+          "y": 50,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "e",
+        "text": "End",
+        "text_element_ids": [
+          "e"
+        ],
+        "role": "end",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 50,
+          "y": 200,
+          "width": 200,
+          "height": 50
+        }
+      },
+      {
+        "element_id": "u",
+        "text": "Other",
+        "text_element_ids": [
+          "u"
+        ],
+        "role": "process",
+        "role_source": "model",
+        "bounding_box": {
+          "x": 400,
+          "y": 200,
+          "width": 200,
+          "height": 50
+        }
+      }
+    ],
+    "edges": [
+      {
+        "relation_id": "r1",
+        "source_id": "s",
+        "target_id": "p",
+        "via_id": null,
+        "status": "confirmed",
+        "original_source_id": "s",
+        "original_target_id": "p"
+      },
+      {
+        "relation_id": "r2",
+        "source_id": "p",
+        "target_id": "e",
+        "via_id": null,
+        "status": "confirmed",
+        "original_source_id": "p",
+        "original_target_id": "e"
+      }
+    ],
+    "contains": [],
+    "invalid_relations": [],
+    "unmapped_relation_ids": [],
+    "projection_basis": "non-rejected CV containment; unreviewed membership is provisional",
+    "rules": {
+      "require_terminal_nodes": true,
+      "decision_min_branches": 2,
+      "check_reachability": true
+    },
+    "rules_version": "1",
+    "status": "analyzed"
+  },
+  "errors": [
+    {
+      "error_id": "flow_error_001",
+      "error_type": "missing_connection",
+      "element_ids": [
+        "u"
+      ],
+      "reason": "The graph contains a 'process' node 'u' (Other) which is not connected to the terminal node 'e' (End). The rule 'require_terminal_nodes' is active, and the only path to 'e' is from 'p'. Node 'u' has no outgoing edge to 'e', making it unreachable from the start and not leading to the end.",
+      "suggestion": "Add a connection from 'u' to 'e' to satisfy the terminal node requirement.",
+      "is_confirmed": true,
+      "review_source": "model"
+    },
+    {
+      "error_id": "flow_error_002",
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "u"
+      ],
+      "reason": "Node 'u' (Other) is not reachable from the start node 's'. The current edges are s->p and p->e. There is no path from 's' to 'u'. The rule 'check_reachability' is active.",
+      "suggestion": "Add a connection from 's' or 'p' to 'u' to make it reachable.",
+      "is_confirmed": true,
+      "review_source": "model"
+    }
+  ],
+  "proposed_relations": [
+    {
+      "proposal_id": "flow_proposal_001",
+      "source_id": "u",
+      "target_id": "e",
+      "relation_type": "logical_flow",
+      "reason": "This repair addresses flow_error_001 by connecting the isolated process node 'u' to the terminal node 'e', satisfying the requirement that all process nodes eventually lead to an end node.",
+      "related_error_ids": [
+        "flow_error_001"
+      ],
+      "status": "needs_user_confirmation",
+      "purpose": "suggested_repair"
+    },
+    {
+      "proposal_id": "flow_proposal_002",
+      "source_id": "s",
+      "target_id": "u",
+      "relation_type": "logical_flow",
+      "reason": "This repair addresses flow_error_002 by connecting the start node 's' to the isolated process node 'u', making it reachable from the beginning of the flow.",
+      "related_error_ids": [
+        "flow_error_002"
+      ],
+      "status": "needs_user_confirmation",
+      "purpose": "suggested_repair"
+    }
+  ],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "model",
+    "stages": {
+      "text_correction": "completed",
+      "semantic_analysis": "completed",
+      "flowchart_analysis": "model_reviewed"
+    },
+    "model_id": "Qwen/Qwen3.5-4B",
+    "prompt_version": "3",
+    "input_type": "json",
+    "inference_seconds": 46.181
+  }
+}

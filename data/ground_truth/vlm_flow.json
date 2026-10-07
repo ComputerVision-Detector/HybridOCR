@@ -1,0 +1,39 @@
+{
+  "document_id": "mock_vlm_flow",
+  "element_ids": [
+    "box_1",
+    "text_1",
+    "box_2",
+    "text_2",
+    "arrow_1"
+  ],
+  "texts": {
+    "text_1": "Start",
+    "text_2": "End"
+  },
+  "reading_order_pairs": [
+    [
+      "text_1",
+      "text_2"
+    ]
+  ],
+  "relations": [
+    {
+      "source_id": "box_1",
+      "target_id": "box_2",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "box_1",
+      "target_id": "text_1",
+      "relation_type": "contains"
+    },
+    {
+      "source_id": "box_2",
+      "target_id": "text_2",
+      "relation_type": "contains"
+    }
+  ],
+  "errors": [],
+  "synthetic": true
+}

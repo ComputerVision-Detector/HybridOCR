@@ -1,0 +1,42 @@
+{
+  "document_id": "flow_isolated_node",
+  "synthetic": true,
+  "element_ids": [
+    "s",
+    "p",
+    "e",
+    "u"
+  ],
+  "texts": {
+    "s": "Start",
+    "p": "Process",
+    "e": "End",
+    "u": "Other"
+  },
+  "relations": [
+    {
+      "source_id": "s",
+      "target_id": "p",
+      "relation_type": "connects"
+    },
+    {
+      "source_id": "p",
+      "target_id": "e",
+      "relation_type": "connects"
+    }
+  ],
+  "errors": [
+    {
+      "error_type": "missing_connection",
+      "element_ids": [
+        "u"
+      ]
+    },
+    {
+      "error_type": "unreachable_node",
+      "element_ids": [
+        "u"
+      ]
+    }
+  ]
+}

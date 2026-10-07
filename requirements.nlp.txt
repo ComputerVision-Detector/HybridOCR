@@ -1,0 +1,5 @@
+# CUDA 지원 torch/torchvision은 src/nlp/README.md의 별도 설치 명령을 사용합니다.
+transformers==5.17.0
+accelerate>=1.9,<2
+torchvision==0.22.1
+Pillow>=10.1,<13

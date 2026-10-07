@@ -1,0 +1,30 @@
+{
+  "document_id": "ordinary_note",
+  "metadata": {
+    "document_type": "note",
+    "synthetic": true
+  },
+  "elements": [
+    {
+      "element_id": "note",
+      "class_type": "Text",
+      "cv_result": {
+        "raw_text": "메모"
+      },
+      "nlp_result": {
+        "corrected_text": null,
+        "sequence_order": null
+      }
+    }
+  ],
+  "relations": [],
+  "nlp_pipeline": {
+    "output_schema_version": "1",
+    "mode": "scaffold",
+    "stages": {
+      "text_correction": "not_implemented",
+      "semantic_analysis": "not_implemented",
+      "flowchart_analysis": "skipped"
+    }
+  }
+}
